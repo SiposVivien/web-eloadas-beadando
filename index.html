@@ -6,7 +6,7 @@
   <title><h1>Web-programozás-1 Előadás Házi feladat</h1></title>
  
  </head>
- <body>
+ <body style="background-color: #eeeeff;">
   <ul>
     <li> <a href="index.html" class="active">1/1-2.feladat</a></li>
     <li> <a href="3.feladat.html" target="_blank">3.feladat</a></li>
@@ -47,15 +47,15 @@
   </div>
 
   <table id="dataTable">
-      <thead>
-          <tr>
-              <th>Név</th>
-              <th>Email</th>
-              <th>Életkor</th>
-              <th>Város</th>
-              <th>Műveletek</th>
-          </tr>
-      </thead>
+    <thead>
+        <tr>
+            <th onclick="sortTable(0)">Név</th>
+            <th onclick="sortTable(1)">Email</th>
+            <th onclick="sortTable(2)">Életkor</th>
+            <th onclick="sortTable(3)">Város</th>
+            <th>Műveletek</th>
+        </tr>
+    </thead>
       <tbody>
           <!-- Ide kerülnek az adatok -->
       </tbody>

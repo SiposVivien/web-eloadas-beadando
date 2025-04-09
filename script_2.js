@@ -178,7 +178,7 @@
 
   function sortTable(n) {
     var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
-    table = document.getElementById("mydata");
+    table = document.getElementById("dataTable");
     switching = true;
     // Set the sorting direction to ascending:
     dir = "asc";
@@ -258,3 +258,8 @@
       tr[i].style.display = matchFound ? "" : "none";
     }
   } 
+  // Make functions available globally
+window.editData = editData;
+window.deleteData = deleteData;
+window.filterTable = filterTable;
+window.sortTable = sortTable;
