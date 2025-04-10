@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="hun">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link type="text/css" rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
+
+    
+</head>
+<body>
+    <header><h1>Web-programozás-1 Előadás Házi feladat</h1></header>
+    <ul>
+        <li> <a href="index.html" class="_blank">1/1-2.feladat</a></li>
+        <li> <a href="3.feladat.html" target="_blank">HTML5</a></li>
+        <li> <a href="4.feladat.html" target="active">ChartJS</a></li>
+      </ul>
+     <!--ChartJS-->
+     <div id="main-container">
+        <h1>valyon</h1>
+        <div id="chart-container">
+            <canvas id="proba"></canvas>
+        </div>
+        <button name="Randomize">random</button>
+        <button name="Add Dataset">add datas</button>
+        <button name="Add Data">add dat</button>
+        <button name="Remove Dataset">rem</button>
+        <button name="Remove Data">remo</button>
+     </div>
+     <script>
+
+// <block:actions:2>
+    const actions = [
+  {
+    name: 'Randomize',
+    handler(chart) {
+      chart.data.datasets.forEach(dataset => {
+        dataset.data = Utils.numbers({count: chart.data.labels.length, min: -100, max: 100});
+      });
+      chart.update();
+    }
+  },
+  {
+    name: 'Add Dataset',
+    handler(chart) {
+      const data = chart.data;
+      const dsColor = Utils.namedColor(chart.data.datasets.length);
+      const newDataset = {
+        label: 'Dataset ' + (data.datasets.length + 1),
+        backgroundColor: Utils.transparentize(dsColor, 0.5),
+        borderColor: dsColor,
+        data: Utils.numbers({count: data.labels.length, min: -100, max: 100}),
+      };
+      chart.data.datasets.push(newDataset);
+      chart.update();
+    }
+  },
+  {
+    name: 'Add Data',
+    handler(chart) {
+      const data = chart.data;
+      if (data.datasets.length > 0) {
+        data.labels = Utils.months({count: data.labels.length + 1});
+
+        for (let index = 0; index < data.datasets.length; ++index) {
+          data.datasets[index].data.push(Utils.rand(-100, 100));
+        }
+
+        chart.update();
+      }
+    }
+  },
+  {
+    name: 'Remove Dataset',
+    handler(chart) {
+      chart.data.datasets.pop();
+      chart.update();
+    }
+  },
+  {
+    name: 'Remove Data',
+    handler(chart) {
+      chart.data.labels.splice(-1, 1); // remove the label first
+
+      chart.data.datasets.forEach(dataset => {
+        dataset.data.pop();
+      });
+
+      chart.update();
+    }
+  }
+];
+// </block:actions>
+
+// <block:setup:1>
+const DATA_COUNT = 7;
+const NUMBER_CFG = {count: DATA_COUNT, min: -100, max: 100};
+
+const labels = Utils.months({count: 7});
+const data = {
+  labels: labels,
+  datasets: [
+    {
+      label: 'Dataset 1',
+      data: Utils.numbers(NUMBER_CFG),
+      borderColor: Utils.CHART_COLORS.red,
+      backgroundColor: Utils.transparentize(Utils.CHART_COLORS.red, 0.5),
+    },
+    {
+      label: 'Dataset 2',
+      data: Utils.numbers(NUMBER_CFG),
+      borderColor: Utils.CHART_COLORS.blue,
+      backgroundColor: Utils.transparentize(Utils.CHART_COLORS.blue, 0.5),
+    }
+  ]
+};
+// </block:setup>
+
+// <block:config:0>
+const proba = {
+  type: 'line',
+  data: data,
+  options: {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'top',
+      },
+      title: {
+        display: true,
+        text: 'Chart.js Line Chart'
+      }
+    }
+  },
+};
+// </block:config>
+
+module.exports = {
+  actions: actions,
+  config: proba,
+};
+     </script>
+
+
+
+      <script src="script.js"></script>
+    <footer>Borbély Bettina-MX4HYQ & Sipos Vivien-G20MJS</footer>
+</body>
+</html>

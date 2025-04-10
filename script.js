@@ -83,3 +83,24 @@ target.addEventListener("drop", (event) => {
     event.target.appendChild(dragged);
   }
 });
+
+//ChartJS menü
+const data={
+    labels: [1, 2, 3, 4, 5],
+    datasets: [{
+        data: [203, 384, 199, 234, 547],
+        label: 'Value'
+    }
+
+    ]
+
+}
+const ctx = document.querySelector('#my-chart');
+
+const myChart = new Chart(
+    ctx,
+    {
+        type: 'line',
+        data
+    }
+)
