@@ -60,10 +60,11 @@ function showPosition(position)
 }
 
 //Drag and Drop API
+
 let dragged = null;
 
-const source = document.getElementById("draggable");
-source.addEventListener("dragstart", (event) => {
+const sourc = document.getElementById("draggable");
+sourc.addEventListener("dragstart", (event) => {
   // store a ref. on the dragged elem
   dragged = event.target;
 });
@@ -218,3 +219,35 @@ const actions = [
     config: proba,
   }; */
 
+//ChartJS again
+
+//gombok:
+/*
+const randBt= document.querySelector('button.btn:nth-child(1)');
+const adsBt= document.querySelector('button.btn:nth-child(2)');
+const addBt= document.querySelector('button.btn:nth-child(3)');
+const remsBt= document.querySelector('button.btn:nth-child(4)');
+const remdBt= document.querySelector('button.btn:nth-child(5)');
+
+buttons[0].addEventListener('click', (e) => {
+  handler(chart) 
+    chart.data.datasets.forEach(dataset => {
+      dataset.data = Utils.numbers({count: chart.data.labels.length, min: -100, max: 100});
+    });
+    chart.update();
+  }
+ 
+);
+
+
+
+
+const ctx = document.querySelector('proba');
+
+const myChart = new Chart(
+    ctx,
+    {
+        type: 'line',
+        data
+    }
+)*/
