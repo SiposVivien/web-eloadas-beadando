@@ -3,28 +3,17 @@
   <head> 
   <meta charset="utf-8"> 
   <script type="text/javascript" src = "ajax.js"></script> 
-  <link type="text/css" rel="stylesheet" href="style.css">
-
+ 
   </head> 
-  <body style="background-color: #eeeeff;"> 
-    <header><h1>Web-programozás-1 Előadás Házi feladat</h1></header>
-    <ul>
-        <li> <a href="index.html" class="_blank">1/1-2.feladat</a></li>
-        <li> <a href="3.feladat.html" target="_blank">HTML5</a></li>
-        <li> <a href="4.feladat.html" target="_blank">ChartJS</a></li>
-        <li> <a href="ajax.html" target="active">Ajax</a></li>
-        
-      </ul>
-
-
+  <body> 
     <div id = 'code'></div> 
     <div id = 'readDiv'></div> 
     <div id = 'createDiv'> 
       <h1>Create</h1> 
       Name (required, max 30): <input id="name1" type="text"></input><br> 
-      City (required, max 30): <input id="city1" type="text"></input><br> 
+      Height (required, max 30): <input id="height1" type="text"></input><br> 
  
-      Phone (required, max 30): <input id="phone1" type="text"></input><br> 
+      Weight (required, max 30): <input id="weight1" type="text"></input><br> 
       <button type="submit" onclick="create();">Create</button><br> 
       <div id = 'createResult'></div> 
     </div>  
@@ -33,8 +22,8 @@
       ID (required): <input id="idUpd" type="text"></input><br>  
       <button type="submit" onclick="getDataForId();">getDataForId</button><br> 
       Name (required, max 30): <input id="name2" type="text"></input><br> 
-      City (required, max 30): <input id="city2" type="text"></input><br> 
-      Phone (required, max 30): <input id="phone2" type="text"></input><br> 
+      Height (required, max 30): <input id="height2" type="text"></input><br> 
+      Weight (required, max 30): <input id="weight2" type="text"></input><br> 
       <button type="submit" onclick="update();">Update</button><br> 
       <div id = 'updateResult'></div>       
     </div>  
@@ -45,4 +34,4 @@
       <div id = 'deleteResult'></div>       
     </div>  
   </body> 
-</html> 
+</html>
