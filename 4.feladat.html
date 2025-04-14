@@ -4,302 +4,125 @@
 <head>
     <meta charset="hun">
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <link type="text/css" rel="stylesheet" href="style.css">
+    <link type="text/css" rel="stylesheet" href="style.css"/>
     <script src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
 
     
 </head>
 <body>
-    <header><h1>Web-programozás-1 Előadás Házi feladat</h1></header>
-    <ul>
-        <li> <a href="index.html" class="_blank">1/1-2.feladat</a></li>
-        <li> <a href="3.feladat.html" target="_blank">HTML5</a></li>
-        <li> <a href="4.feladat.html" target="active">ChartJS</a></li>
-        <li> <a href="ajax.html" target="_blank">Ajax</a></li>
-      </ul>
+  <header><h1>Web-programozás-1 Előadás Házi feladat</h1></header>
+  <ul>
+    <li> <a href="index.html" class="_blank">1/1-2.feladat</a></li>
+    <li> <a href="3.feladat.html" target="_blank">HTML5</a></li>
+    <li> <a href="4.feladat.html" target="active">ChartJS</a></li>
+    <li> <a href="ajax.html" target="_blank">Ajax</a></li>
+    <li> <a href="6.feladat.html" target="_blank">OOJS</a></li>
+  </ul>
      <!--ChartJS-->
+    <table id="dataTable" class="chartjs_table">
+      <thead>
+          <tr>
+              <th>#</th>
+              <th>Oszlop 1</th>
+              <th>Oszlop 2</th>
+              <th>Oszlop 3</th>
+              <th>Oszlop 4</th>
+              <th>Oszlop 5</th>
+          </tr>
+      </thead>
+      <tbody>
 
+      </tbody>
+  </table>
 
+  <div id="chartContainer">
+      <canvas id="lineChart"></canvas>
+  </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div>
-  <div>
-        <canvas id="MyChart"></canvas>
-      </div>
-    </div>
-      
-
-      <script>
-
-        let DATA_COUNT;
-        //Setup block
-        const NUMBER_CFG = {count: DATA_COUNT, min: -100, max: 100};
-
-const labels = Utils.months({count: 7});
-const data = {
-  labels: labels,
-  datasets: [
-    {
-      label: 'Dataset 1',
-      data: Utils.numbers(NUMBER_CFG),
-      borderColor: Utils.CHART_COLORS.red,
-      backgroundColor: Utils.transparentize(Utils.CHART_COLORS.red, 0.5),
-    },
-    {
-      label: 'Dataset 2',
-      data: Utils.numbers(NUMBER_CFG),
-      borderColor: Utils.CHART_COLORS.blue,
-      backgroundColor: Utils.transparentize(Utils.CHART_COLORS.blue, 0.5),
-    },
-  ]
-};
-
-//cONFIG BLOCK
-const config = {
-  type: 'line',
-  data: data,
-  options: {
-    responsive: true,
-    plugins: {
-      legend: {
-        position: 'top',
-      },
-      title: {
-        display: true,
-        text: 'Chart.js Line Chart'
-      }
-    }
-  },
-};
-
-        //RENDER
-        var MyChart = new Chart(
-          document.getElementById('MyChart'),
-          config
-        );
-      </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-     <!--<div id="main-container">
-        <h1>nem</h1>
-        <div id="chart-container">
-            <canvas id="proba"></canvas>
-        </div>
-        <button id="add-v">
-          addvalueasdfs
-        </button>
-        <button onclick="removeDataset">
-asd
-        </button>
-        
-        </div>
-
-<script>
-
-          const options = {
-            animation: true
-          }
-
-
-
-            const data = {
-              labels: [1,2,3,4,5],
-              datasets: [{
-                data: [234,453,564,654,543],
-                label:'Value'
-              }]
-            }
-
-          const ctx = document.querySelector('#proba')
-
-          const haha = new Chart(
-
-          ctx,
-          {
-            type: 'line',
-            data
-          }
-          )
-
-
-          const addvBt = document.querySelector('#add-v');
-
-          addvBt.addEventListener('click', ()=>{
-            haha.data.labels.push(haha.data.labels.length+1);
-            const randomN = Math.random() * 1000+1;
-            haha.data.datasets[0].data.push(randomN);
-            haha.update();
-
-          })
-          //Remove DataSet
-          function removeDataset(){
-            haha.data.datasets.pop();
-            haha.update()
-
-          }</script>-->
-
-     
-     
-
-
-
-        
-
-
-<!--     <script>
-      const ctx = document.querySelector('#proba')
-  // <block:actions:2>
-const actions = [
-    {
-      name: 'Randomize',
-      handler(chart) {
-        chart.data.datasets.forEach(dataset => {
-          dataset.data = Utils.numbers({count: chart.data.labels.length, min: -100, max: 100});
-        });
-        chart.update();
-      }
-    },
-    {
-      name: 'Add Dataset',
-      handler(chart) {
-        const data = chart.data;
-        const dsColor = Utils.namedColor(chart.data.datasets.length);
-        const newDataset = {
-          label: 'Dataset ' + (data.datasets.length + 1),
-          backgroundColor: Utils.transparentize(dsColor, 0.5),
-          borderColor: dsColor,
-          data: Utils.numbers({count: data.labels.length, min: -100, max: 100}),
-        };
-        chart.data.datasets.push(newDataset);
-        chart.update();
-      }
-    },
-    {
-      name: 'Add Data',
-      handler(chart) {
-        const data = chart.data;
-        if (data.datasets.length > 0) {
-          data.labels = Utils.months({count: data.labels.length + 1});
-  
-          for (let index = 0; index < data.datasets.length; ++index) {
-            data.datasets[index].data.push(Utils.rand(-100, 100));
-          }
-  
-          chart.update();
+  <script>
+    // Véletlenszerű adatok generálása a táblázathoz
+function generateRandomData(rows, cols) {
+    const data = [];
+    for (let i = 0; i < rows; i++) {
+        const row = [];
+        for (let j = 0; j < cols; j++) {
+            row.push(Math.floor(Math.random() * 100) + 1);
         }
-      }
-    },
-    {
-      name: 'Remove Dataset',
-      handler(chart) {
-        chart.data.datasets.pop();
-        chart.update();
-      }
-    },
-    {
-      name: 'Remove Data',
-      handler(chart) {
-        chart.data.labels.splice(-1, 1); // remove the label first
-  
-        chart.data.datasets.forEach(dataset => {
-          dataset.data.pop();
-        });
-  
-        chart.update();
-      }
+        data.push(row);
     }
-  ];
-  // </block:actions>
-  
-  // <block:setup:1>
-  const DATA_COUNT = 7;
-  const NUMBER_CFG = {count: DATA_COUNT, min: -100, max: 100};
-  
-  const labels = Utils.months({count: 7});
-  const data = {
-    labels: labels,
-    datasets: [
-      //ITT KELL LEHET MEGADNI A DATAT A NARANCS HELYETT, DE EZ MRÁ CSAK HOLNAP
-      {
-        label: 'DATABASE 1',
-        data: Utils.numbers(NUMBER_CFG),
-        borderColor: Utils.CHART_COLORS.red,
-        backgroundColor: Utils.transparentize(Utils.CHART_COLORS.red, 0.5),
-      },
-      {
-        label: 'DATAVMI',
-        data: Utils.numbers(NUMBER_CFG),
-        borderColor: Utils.CHART_COLORS.blue,
-        backgroundColor: Utils.transparentize(Utils.CHART_COLORS.blue, 0.5),
-      }
-    ]
-  };
-  // </block:setup>
-  
-  // <block:config:0>
-  const chart = new Chart(
-    ctx,
-    {
+    return data;
+}
+
+// Táblázat feltöltése
+const tableData = generateRandomData(5, 5);
+const tableBody = document.querySelector('#dataTable tbody');
+
+tableData.forEach((row, rowIndex) => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+        <td>${rowIndex + 1}</td>
+        <td>${row[0]}</td>
+        <td>${row[1]}</td>
+        <td>${row[2]}</td>
+        <td>${row[3]}</td>
+        <td>${row[4]}</td>
+    `;
+    
+    // Sor kiválasztása
+    tr.addEventListener('click', () => {
+        // Előző kijelölés törlése
+        document.querySelectorAll('#dataTable tbody tr').forEach(r => {
+            r.classList.remove('selected');
+        });
+        
+        // Új kijelölés
+        tr.classList.add('selected');
+        
+        // Diagram frissítése
+        updateChart(row, rowIndex);
+    });
+    
+    tableBody.appendChild(tr);
+});
+
+// Diagram inicializálása
+const ctx = document.getElementById('lineChart').getContext('2d');
+let chart = new Chart(ctx, {
     type: 'line',
-    data: data,
-    options: {
-      responsive: true,
-      plugins: {
-        legend: {
-          position: 'top',
-        },
-        title: {
-          display: true,
-          text: 'Chart.js Line Chart'
-        }
-      }
+    data: {
+        labels: ['Oszlop 1', 'Oszlop 2', 'Oszlop 3', 'Oszlop 4', 'Oszlop 5'],
+        datasets: [{
+            label: 'Választott sor adatai',
+            data: [],
+            borderColor: 'rgb(255, 192, 192)',
+            
+            tension: 0.1,
+            fill: false
+        }]
     },
-  });
-  // </block:config>
-  
-  module.exports = {
-    actions: actions,
-    config: proba,
-  };
+    options: {
+        responsive: true,
+        scales: {
+            y: {
+                beginAtZero: false
+            }
+        }
+    }
+});
 
+// Diagram frissítése
+function updateChart(rowData, rowIndex) {
+    chart.data.datasets[0].data = rowData;
+    chart.data.datasets[0].label = `${rowIndex + 1}. sor adatai`;
+    chart.update();
+}
 
-     </script>-->
+// Alapértelmezettként az első sor kijelölése
+document.querySelector('#dataTable tbody tr').click();
+  </script>
+
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js" integrity="sha512-L0Shl7nXXzIlBSUUPpxrokqq4ojqgZFQczTYlGjzONGTDAcLremjwaWv5A+EDLnxhQzY5xUZPWLOLqYRkY0Cbw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-      <script type="module" src="script.js"></script>
     <footer>Borbély Bettina-MX4HYQ & Sipos Vivien-G20MJS</footer>
 </body>
 </html>

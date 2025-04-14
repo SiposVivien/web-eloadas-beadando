@@ -56,14 +56,16 @@ a {
   margin: 0px 1px; 
   text-decoration: none; 
   color: white; 
-  background-color: #3399ee; 
+  background-color: #1364a7; 
 } 
 a:hover { 
   background-color: #cc6600; 
 } 
 
 a.active{ 
-border-bottom:5px solid blue; 
+color: rgb(255, 0, 0);
+font-size: large;
+background-color: #0f4470;
 }
 
 #myInput {
