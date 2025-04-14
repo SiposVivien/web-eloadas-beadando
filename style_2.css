@@ -67,6 +67,11 @@ color: rgb(255, 0, 0);
 font-size: large;
 background-color: #0f4470;
 }
+footer{
+  background-color: #ffffff;
+  color: rgb(253, 167, 167);
+  text-align: center;
+}
 
 #myInput {
 background-image: url('/css/searchicon.png'); /* Add a search icon to input */

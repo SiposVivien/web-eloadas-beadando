@@ -1,54 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <link type="text/css" rel="stylesheet" href="style.css">
-
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <link type="text/css" rel="stylesheet" href="style.css">
 </head>
-<body style="background-color: #eeeeff;">
+<body>
   <header><h1>Web-programozás-1 Előadás Házi feladat</h1></header>
     <ul>
-        <li> <a href="index.html" class="_blank">1/1-2.feladat</a></li>
-        <li> <a href="3.feladat.html" target="active">HTML5</a></li>
-        <li> <a href="4.feladat.html" target="_blank">ChartJS</a></li>
-        <li> <a href="ajax.html" target="_blank">Ajax</a></li>
-        <li> <a href="6.feladat.html" target="_blank">OOJS</a></li>
-      </ul>
-
-    <!--ez a WebWorker-hez kell példa, de ennek meg van egy server oldalia-->
-  <input type="button" onclick="bigLoop();" value="Ne nyomkodj">
-  <br>
-  <br>
-  <input type="button" onclick="sayHello();" value="Heló">
-  <br>
-  <br>
-  <!--Geolocation API példa-->
-  <button onclick="Helymeghatarozas()">Helymeghatározás</button>
-  
-  <!--Drag and Drop API--><div class="dropzone">
-    <div id="draggable" draggable="true">Drag & drop</div>
+      <li> <a href="index.html" target="_blank">1-2.feladat</a></li>
+      <li> <a href="3.feladat.html" class="active">HTML5</a></li>
+      <li> <a href="4.feladat.html" target="_blank">ChartJS</a></li>
+      <li> <a href="ajax.html" target="_blank">Ajax</a></li>
+      <li> <a href="6.feladat.html" target="_blank">OOJS</a></li>
+    </ul>
+  <!--WebWorker példa-->
+  <div>
+    <div><input type="button" onclick="bigLoop();" value="WebWorker"></div>
+    <div><input type="button" onclick="sayHello();" value="Heló"></div>
   </div>
+  <!--Geolocation API példa-->
+  <div>
+    <button onclick="Helymeghatarozas()">Helymeghatározás</button>
+  </div>
+  <!--Drag and Drop API-->
+  <div class="dropzone">
+    <div id="draggable" draggable="true">négy</div>
+  </div>
+  <div>Max verstappen vb-címeinek a száma:</div>
   <div class="dropzone" id="drop-target"></div>
-  
-  
   <!--Canvas-->
-  <canvas id="mycanvas" width="100" height="100"></canvas>
-  <br>
-  
+  <p>McLaren logó Canvával illetve SVG-vel:</p>
+  <div>
+    <canvas id="mycanvas"></canvas>
+  </div>
+  <br><br><br><br><br><br><br><br><br><br><br>
   <!--SVG-->
     <svg height="130" width="500">
-    <defs>
-    <linearGradient id="grad1" x1="100%" y1="0%" >
-    <stop offset="100%" style="stop-color:rgb(255, 216, 131);stop-opacity:1" />
-    </linearGradient>
-    </defs>
-    <ellipse cx="100" cy="70" rx="85" ry="55" fill="url(#grad1)" />
-    <text fill="black" font-size="25" font-family="Verdana" x="74" y="80">
-    SVG
-    </text>
-    A böngésző nem támogatja az SVG-t.
-    </svg>
-
+      <defs>
+      <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="20%" style="stop-color:rgb(255, 219, 18);stop-opacity:1" />
+      <stop offset="70%" style="stop-color:rgb(255, 174, 0);stop-opacity:1" />
+      </linearGradient>
+      </defs>
+      <ellipse cx="100" cy="70" rx="85" ry="55" fill="url(#grad1)" />
+      <text fill="#ffffff" font-size="30" font-family="Verdana" x="43" y="80">
+      McLaren
+      </text>
+      Sorry, your browser does not support inline SVG.
+      </svg>
+      <br>
     <script src="script.js"></script>
     <script scr="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/drop_event"></script>
     <footer>Borbély Bettina-MX4HYQ & Sipos Vivien-G20MJS</footer>

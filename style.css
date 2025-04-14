@@ -1,58 +1,58 @@
-ul {
-    float:left;
-    width: 100%;
-    padding: 0; margin:0;
-    list-style-type: none;
-  }
-  li 
-  {
-    display: inline;
-  }
-  a{
-    float: left;
-    padding: 3px 5px;
-    margin: 0px 1px;
-    text-decoration: none;
-    color: white;
-    background-color: #194d77;
-  }
-  a:hover {
-    background-color: #cc6600;
-  }
-  a.active{ 
-    color: rgb(255, 0, 0);
-    font-size: large;
-    background-color: #0f4470;
-  }
-  
-  
-  #draggable {
-    text-align: center;
-    background: rgb(232, 225, 252);
-  }
-  body{
-    user-select: none;
-    background-color: #eeeeff;
-    font-family: Arial, sans-serif;
-  }
-  .dropzone {
-    width: 200px;
-    height: 20px;
-    background: rgb(213, 185, 240);
-    margin: 10px;
-    padding: 10px;
-  }
-  
-  
-  #mycanvas{border:1px solid red;}
-
-
-
-  
-  .chartjs_table{
-    border-collapse: collapse;
-    width: 100%;
-    margin-bottom: 20px;
+ul{
+  float:left;
+  width: 100%;
+  padding: 0; margin:0;
+  list-style-type: none;
+}
+li 
+{
+  display: inline;
+}
+a{
+  float: left;
+  padding: 3px 5px;
+  margin: 0px 1px;
+  text-decoration: none;
+  color: white;
+  background-color: #194d77;
+}
+a:hover{
+  background-color: #cc6600;
+}
+a.active{ 
+  color: rgb(255, 0, 0);
+  font-size: large;
+  background-color: #0f4470;
+}
+footer{
+  background-color: #ffffff;
+  color: rgb(253, 167, 167);
+  text-align: center;
+}
+#draggable {
+  text-align: center;
+  background: rgb(232, 225, 252);
+}
+body{
+  user-select: none;
+  background-color: #eeeeff;
+  font-family: Arial, sans-serif;
+}
+.dropzone {
+  width: 200px;
+  height: 20px;
+  background: rgb(213, 185, 240);
+  margin: 10px;
+  padding: 10px;
+}
+#mycanvas{
+  border:1px solid;
+  position: absolute;
+}
+.chartjs_table{
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
 }
 th, td {
     border: 1px solid #ddd;
