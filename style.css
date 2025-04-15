@@ -46,8 +46,11 @@ body{
   padding: 10px;
 }
 #mycanvas{
-  border:1px solid;
+  border:3px solid;
   position: absolute;
+  background-color: white;
+  top:100;
+  left: 0;
 }
 .chartjs_table{
   border-collapse: collapse;

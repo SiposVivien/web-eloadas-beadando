@@ -79,32 +79,28 @@ target.addEventListener("drop", (event) =>
 //Canvas
 const canvas = document.getElementById('mycanvas');
 const ctx = canvas.getContext('2d');
-canvas.width = "200";
-canvas.height = "200";
+canvas.width = window.innerWidth
+canvas.height = window.innerHeight
 
 window.addEventListener('resize', function(){
-    canvas.width = "200";
-    canvas.height = "200";
-
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 });
 
 const mouse = {
     x: null,
     y: null,
 }
-
-canvas.addEventListener('click', function(event){
+canvas.addEventListener('mousemove', function(event){
     mouse.x = event.x;
     mouse.y= event.y;
     drawCircle();
-});
-
+})
 function drawCircle(){
 ctx.fillStyle='orange';
 ctx.beginPath();
-ctx.arc(mouse.x, mouse.y, 50, 0, Math.PI * 2);
+ctx.arc(mouse.x, mouse.y, 10, 0, Math.PI * 2);
 ctx.fill();
-
 }
 drawCircle();
 
