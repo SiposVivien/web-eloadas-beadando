@@ -5,7 +5,6 @@ url="http://gamf.nhely.hu/ajax2/";
 let HeightSUM=0;
 let HeightAvg=0;
 let HeightMAX=0;
-
 async function read() { 
   document.getElementById("code").innerHTML="code="+code; 
   let response = await fetch(url, { 
@@ -26,15 +25,11 @@ async function read() {
   {
     HeightSUM+=parseFloat(list[i].height);
   }
-
   HeightAvg=HeightSUM/data.rowCount
-
   for(let i=0; i<list.length;i++)
   {
     if(parseFloat(list[i].height)<HeightMAX) HeightMAX=i;
   }
-
-
   // !!! Először String-ben elkészítjük és csak a végén adjuk hozzá a DOM-hoz: divRead.innerHTML=str; 
   str="<H1>Read</H1>"; 
   str+="<p>Number of records: "+data.rowCount+"</p>"; 
@@ -49,7 +44,6 @@ async function read() {
   str+="<p> HeightMAX: "+list[HeightMAX].height+"</p>";
   document.getElementById("readDiv").innerHTML=str; 
 } 
- 
 async function create(){ 
   // name: reserved word 
   nameStr = document.getElementById("name1").value; 
@@ -60,13 +54,11 @@ weight.length>0 && weight.length<=30 && code.length<=30){
     let response = await fetch(url, { 
       method: 'post', 
       cache: 'no-cache', 
-      headers: { 
-        'Content-Type': 'application/x-www-form-urlencoded', 
-      }, 
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded', }, 
       body: "code="+code+"&op=create&name="+nameStr+"&height="+height+"&weight="+weight
     }); 
     let data = await response.text();  
-    if(data>0) 
+    if(data>0)
       str="Create successful!"; 
     else 
     str="Create NOT successful!"; 
@@ -102,7 +94,6 @@ async function getDataForId() {
       document.getElementById("weight2").value=list[i].weight; 
     } 
 } 
- 
 async function update(){ 
   // name: reserved word 
   id = document.getElementById("idUpd").value; 
@@ -114,9 +105,7 @@ height.length<=30 && weight.length>0 && weight.length<=30 && code.length<=30){
     let response = await fetch(url, { 
       method: 'post', 
       cache: 'no-cache', 
-      headers: { 
-        'Content-Type': 'application/x-www-form-urlencoded', 
-      }, 
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded',}, 
       body: 
 "code="+code+"&op=update&id="+id+"&name="+nameStr+"&height="+height+"&weight="+weight
     }); 
@@ -145,9 +134,7 @@ async function deleteF(){
     let response = await fetch(url, { 
       method: 'post', 
       cache: 'no-cache', 
-      headers: { 
-        'Content-Type': 'application/x-www-form-urlencoded', 
-      }, 
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded', }, 
       body: "code="+code+"&op=delete&id="+id 
     }); 
     let data = await response.text();  
@@ -163,6 +150,7 @@ async function deleteF(){
     document.getElementById("deleteResult").innerHTML="Validation error!!"; 
 } 
  
-window.onload = function() { 
-    read(); 
+window.onload = function()
+{ 
+    read();
 }; 

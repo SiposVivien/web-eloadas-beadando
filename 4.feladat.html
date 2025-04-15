@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <link type="text/css" rel="stylesheet" href="style.css"/>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
-
-    
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <link type="text/css" rel="stylesheet" href="style.css"/>
+<script src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
 </head>
 <body>
   <header><h1>Web-programozás-1 Előadás Házi feladat</h1></header>
@@ -17,24 +15,26 @@
     <li> <a href="6.feladat.html" target="_blank">OOJS</a></li>
   </ul>
      <!--ChartJS-->
-    <table id="dataTable" class="chartjs_table">
-      <thead>
-          <tr>
-              <th>#</th>
-              <th>Oszlop 1</th>
-              <th>Oszlop 2</th>
-              <th>Oszlop 3</th>
-              <th>Oszlop 4</th>
-              <th>Oszlop 5</th>
-          </tr>
-      </thead>
-      <tbody>
+  <br>
+  <p>A Mercesed-AMG PETRONAS F1 csapat konstruktor pontszámainak az alakulása, 2020-2024-ig tartó szezonban, az első öt futamot tekintve.</p>
+  <table id="dataTable" class="chartjs_table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>2020</th>
+            <th>2021</th>
+            <th>2022</th>
+            <th>2023</th>
+            <th>2024</th>
+        </tr>
+    </thead>
+    <tbody>
 
-      </tbody>
+    </tbody>
   </table>
 
   <div id="chartContainer">
-      <canvas id="lineChart"></canvas>
+    <canvas id="lineChart"></canvas>
   </div>
 
   <script>
@@ -43,7 +43,8 @@ function generateRandomData(rows, cols) {
     const data = [];
     for (let i = 0; i < rows; i++) {
         const row = [];
-        for (let j = 0; j < cols; j++) {
+        for (let j = 0; j < cols; j++)
+        {
             row.push(Math.floor(Math.random() * 100) + 1);
         }
         data.push(row);
@@ -58,28 +59,23 @@ const tableBody = document.querySelector('#dataTable tbody');
 tableData.forEach((row, rowIndex) => {
     const tr = document.createElement('tr');
     tr.innerHTML = `
-        <td>${rowIndex + 1}</td>
+        <td>${rowIndex + 1}.futam</td>
         <td>${row[0]}</td>
         <td>${row[1]}</td>
         <td>${row[2]}</td>
         <td>${row[3]}</td>
-        <td>${row[4]}</td>
-    `;
-    
+        <td>${row[4]}</td>`;
     // Sor kiválasztása
     tr.addEventListener('click', () => {
         // Előző kijelölés törlése
         document.querySelectorAll('#dataTable tbody tr').forEach(r => {
             r.classList.remove('selected');
         });
-        
         // Új kijelölés
         tr.classList.add('selected');
-        
         // Diagram frissítése
         updateChart(row, rowIndex);
     });
-    
     tableBody.appendChild(tr);
 });
 
@@ -88,12 +84,11 @@ const ctx = document.getElementById('lineChart').getContext('2d');
 let chart = new Chart(ctx, {
     type: 'line',
     data: {
-        labels: ['Oszlop 1', 'Oszlop 2', 'Oszlop 3', 'Oszlop 4', 'Oszlop 5'],
+        labels: ['2020', '2021', '2022', '2023', '2024'],
         datasets: [{
             label: 'Választott sor adatai',
             data: [],
             borderColor: 'rgb(255, 192, 192)',
-            
             tension: 0.1,
             fill: false
         }]
@@ -101,26 +96,24 @@ let chart = new Chart(ctx, {
     options: {
         responsive: true,
         scales: {
-            y: {
+            y:
+            {
                 beginAtZero: false
             }
         }
     }
 });
-
 // Diagram frissítése
-function updateChart(rowData, rowIndex) {
+function updateChart(rowData, rowIndex)
+{
     chart.data.datasets[0].data = rowData;
     chart.data.datasets[0].label = `${rowIndex + 1}. sor adatai`;
     chart.update();
 }
-
 // Alapértelmezettként az első sor kijelölése
 document.querySelector('#dataTable tbody tr').click();
   </script>
-
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js" integrity="sha512-L0Shl7nXXzIlBSUUPpxrokqq4ojqgZFQczTYlGjzONGTDAcLremjwaWv5A+EDLnxhQzY5xUZPWLOLqYRkY0Cbw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <footer>Borbély Bettina-MX4HYQ & Sipos Vivien-G20MJS</footer>
+  <footer>Borbély Bettina-MX4HYQ & Sipos Vivien-G20MJS</footer>
 </body>
 </html>

@@ -4,7 +4,6 @@
   <meta charset="utf-8"> 
   <link type="text/css" rel="stylesheet" href="style.css">
   <script type="text/javascript" src = "ajax.js"></script> 
- 
   </head> 
   <body>
     <header><h1>Web-programozás-1 Előadás Házi feladat</h1></header>
@@ -19,20 +18,19 @@
     <div id = 'readDiv'></div> 
     <div id = 'createDiv'> 
       <h1>Create</h1> 
-      Name (required, max 30): <input id="name1" type="text"></input><br> 
-      Height (required, max 30): <input id="height1" type="text"></input><br> 
- 
-      Weight (required, max 30): <input id="weight1" type="text"></input><br> 
-      <button type="submit" onclick="create();">Create</button><br> 
-      <div id = 'createResult'></div> 
+      Név (max 30 karakter): <input id="name1" type="text"></input><br>
+      Magasság (max 30 karakter): <input id="height1" type="text"></input><br>
+      Súly (max 30 karakter): <input id="weight1" type="text"></input><br>
+      <button type="submit" onclick="create();">Create</button><br>
+      <div id = 'createResult'></div>
     </div>  
     <div id = 'updateDiv'> 
       <h1>Update</h1> 
       ID (required): <input id="idUpd" type="text"></input><br>  
       <button type="submit" onclick="getDataForId();">getDataForId</button><br> 
-      Name (required, max 30): <input id="name2" type="text"></input><br> 
-      Height (required, max 30): <input id="height2" type="text"></input><br> 
-      Weight (required, max 30): <input id="weight2" type="text"></input><br> 
+      Név (max 30 karakter): <input id="name2" type="text"></input><br> 
+      Magasság (max 30 karakter): <input id="height2" type="text"></input><br> 
+      Súly (max 30 karakter): <input id="weight2" type="text"></input><br> 
       <button type="submit" onclick="update();">Update</button><br> 
       <div id = 'updateResult'></div>       
     </div>  
