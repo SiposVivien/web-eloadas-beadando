@@ -162,10 +162,10 @@
   // Kezdeti adatok betöltése (opcionális)
   function loadSampleData() {
       data = [
-          { name: 'Max Verstappen', email: 'super.max@f1.com', rajtsz: 27, coun: 'Hollandia' },
-          { name: 'George Russel', email: 'georgi.russl@f1.com', rajtsz: 27, coun: 'Anglia' },
-          { name: 'Lando Norris', email: 'landooo@f1.com', rajtsz: 25, coun: 'Anglia' },
-          { name: 'Oscar Piastri', email: 'oscarpi.astri@f1.com', rajtsz: 24, coun: 'Ausztrália' }
+          { name: 'Max Verstappen', email: 'super.max@f1.com', rajtsz: 1, coun: 'Hollandia' },
+          { name: 'George Russel', email: 'georgi.russl@f1.com', rajtsz: 63, coun: 'Anglia' },
+          { name: 'Lando Norris', email: 'landooo@f1.com', rajtsz: 4, coun: 'Anglia' },
+          { name: 'Oscar Piastri', email: 'oscarpi.astri@f1.com', rajtsz: 81, coun: 'Ausztrália' }
       ];
       renderTable();
   }
