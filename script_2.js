@@ -7,8 +7,8 @@
   const form = document.getElementById('dataForm');
   const nameInput = document.getElementById('name');
   const emailInput = document.getElementById('email');
-  const ageInput = document.getElementById('age');
-  const cityInput = document.getElementById('city');
+  const rajtszInput = document.getElementById('rajtsz');
+  const counInput = document.getElementById('coun');
   const addBtn = document.getElementById('addBtn');
   const updateBtn = document.getElementById('updateBtn');
   const cancelBtn = document.getElementById('cancelBtn');
@@ -17,8 +17,8 @@
   const errorElements = {
       name: document.getElementById('nameError'),
       email: document.getElementById('emailError'),
-      age: document.getElementById('ageError'),
-      city: document.getElementById('cityError')
+      rajtsz: document.getElementById('rajtszError'),
+      coun: document.getElementById('counError')
   };
 
   // Eseményfigyelők
@@ -36,8 +36,8 @@
           row.innerHTML = `
               <td>${item.name}</td>
               <td>${item.email}</td>
-              <td>${item.age}</td>
-              <td>${item.city}</td>
+              <td>${item.rajtsz}</td>
+              <td>${item.coun}</td>
               <td>
                   <button onclick="editData(${index})">Szerkesztés</button>
                   <button onclick="deleteData(${index})">Törlés</button>
@@ -69,20 +69,20 @@
           errorElements.email.textContent = '';
       }
       
-      // Életkor validáció
-      if (ageInput.value < 1 || ageInput.value > 120) {
-          errorElements.age.textContent = 'Az életkornak 1-120 között kell lennie!';
+      // Rajtsorszám validáció
+      if (rajtszInput.value < 1 || rajtszInput.value > 120) {
+          errorElements.rajtsz.textContent = 'A rajsorszámra 2-120 között kell lennie!';
           isValid = false;
       } else {
-          errorElements.age.textContent = '';
+          errorElements.rajtsz.textContent = '';
       }
       
-      // Város validáció
-      if (cityInput.value.length < 2 || cityInput.value.length > 30) {
-          errorElements.city.textContent = 'A városnévnek 2-30 karakter hosszúnak kell lennie!';
+      // Country validáció
+      if (counInput.value.length < 2 || counInput.value.length > 30) {
+          errorElements.coun.textContent = 'Az országnévnek 2-30 karakter hosszúnak kell lennie!';
           isValid = false;
       } else {
-          errorElements.city.textContent = '';
+          errorElements.coun.textContent = '';
       }
       
       return isValid;
@@ -95,8 +95,8 @@
       const newData = {
           name: nameInput.value,
           email: emailInput.value,
-          age: ageInput.value,
-          city: cityInput.value
+          rajtsz: rajtszInput.value,
+          coun: counInput.value
       };
       
       data.push(newData);
@@ -109,8 +109,8 @@
       const item = data[index];
       nameInput.value = item.name;
       emailInput.value = item.email;
-      ageInput.value = item.age;
-      cityInput.value = item.city;
+      rajtszInput.value = item.rajtsz;
+      counInput.value = item.coun;
       
       currentEditId = index;
       addBtn.style.display = 'none';
@@ -125,8 +125,8 @@
       data[currentEditId] = {
           name: nameInput.value,
           email: emailInput.value,
-          age: ageInput.value,
-          city: cityInput.value
+          rajtsz: rajtszInput.value,
+          coun: counInput.value
       };
       
       renderTable();
@@ -162,10 +162,10 @@
   // Kezdeti adatok betöltése (opcionális)
   function loadSampleData() {
       data = [
-          { name: 'Kovács János', email: 'kovacs.janos@example.com', age: 32, city: 'Budapest' },
-          { name: 'Nagy Eszter', email: 'nagy.eszter@example.com', age: 28, city: 'Debrecen' },
-          { name: 'Tóth Péter', email: 'toth.peter@example.com', age: 45, city: 'Szeged' },
-          { name: 'Horváth Anna', email: 'horvath.anna@example.com', age: 22, city: 'Pécs' }
+          { name: 'Max Verstappen', email: 'super.max@f1.com', rajtsz: 27, coun: 'Hollandia' },
+          { name: 'George Russel', email: 'georgi.russl@f1.com', rajtsz: 27, coun: 'Anglia' },
+          { name: 'Lando Norris', email: 'landooo@f1.com', rajtsz: 25, coun: 'Anglia' },
+          { name: 'Oscar Piastri', email: 'oscarpi.astri@f1.com', rajtsz: 24, coun: 'Ausztrália' }
       ];
       renderTable();
   }
