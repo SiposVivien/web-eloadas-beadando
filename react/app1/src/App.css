@@ -1,0 +1,74 @@
+/* Alapértelmezett beállítások */
+body, html {
+  margin: 0; /* Nincs margó és padding */
+  padding: 0;
+  height: 100%; /* Teljes magasság */
+  overflow: hidden; /* Nincs görgetés */
+  color: #000; /* Fekete szöveg */
+}
+
+/* Fő játék container */
+.hangman-container {
+  height: 100vh; /* Teljes képernyő magasság */
+  width: 100vw; /* Teljes képernyő szélesség */
+  display: flex;
+  flex-direction: column; /* Elemei egymás alatt */
+  align-items: center; /* Középre igazítás vízszintesen */
+  justify-content: center; /* Középre igazítás függőlegesen */
+  background: #f0f0f0;   /* Fehér háttér */
+  color: #000;  /* Fekete szöveg */
+}
+
+/* Szó megjelenítő rész */
+.word-display {
+  font-size: 3rem; /* Nagy betűméret (48px) */
+  letter-spacing: 1rem;  /* Betűk közötti tér (16px) */
+  margin: 2rem 0; /* 32px margó felül-alul */
+  color: #000;  /* Fekete szöveg */
+}
+
+/* Aláhúzás stílusa */
+.word-display span {
+  display: inline-block;
+  min-width: 40px; /* Minimális szélesség */
+  border-bottom: 3px solid #000; /* Fekete aláhúzás */
+  margin: 0 5px;  /* 5px margó balra-jobbra */
+  text-align: center; /* Középre igazított szöveg */
+}
+
+/* Megfejtett betűk */
+.word-display .letter {
+  color: #000; /* Fekete szöveg */
+  border-bottom: none; /* Nincs aláhúzás */
+} 
+
+/* Billentyűzet stílus */
+.keyboard {
+  display: grid; /* Rács elrendezés */
+  grid-template-columns: repeat(7, 1fr); /* 7 oszlop */
+  gap: 10px; /* 10px rés a gombok között */
+  width: 90%;   /* Szélesség: 90%-a a szülőnek */
+  max-width: 800px;  /* Maximális szélesség */
+  margin-top: 20px; /* 20px margó felül */
+}
+
+/* Figura */
+.hangman-canvas {
+  display: flex; /* Flexbox elrendezést használ */
+  justify-content: center; /* Középre igazítja a tartalmat vízszintesen */
+  margin: 20px; /* 20 képpontnyi külső margó minden oldalon */
+}
+
+.hangman-canvas>div {
+  width: 20px; /* 20 képpont széles */
+  height: 20px; /* 20 képpont magas */
+  background-color: #333; /* Sötétszürke háttérszín */
+  margin: 0 5px; /* 0 pixel margó felül-alul, 5 pixel oldalt */
+  border-radius: 50%; /* Teljesen lekerekített (kör alakú) */
+}
+
+
+
+
+
+

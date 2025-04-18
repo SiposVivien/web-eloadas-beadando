@@ -1,0 +1,87 @@
+/* Fő container */
+.hangman-container {
+    text-align: center; /* Középre igazított tartalom */
+    padding: 20px; /* 20 képpont belső térköz */
+    background-color: #f2f2f2; /* Világosszürke háttér */
+    border-radius: 10px; /* 10px-es lekerekített sarkok */
+    box-shadow: 10 10 10px rgba(0, 0, 0, 0.2); /* Árnyék effekt */
+}
+
+h1 {
+    color: #333; /* Sötétszürke színű cím */
+}
+
+/* Szó megjelenítő */
+.word-display {
+    margin: 20px; /* 20px külső térköz */
+    font-size: 24px; /* 24 képpontos betűméret */
+    display: flex; /* Flexbox elrendezés */
+    justify-content: center; /* Középre igazítás */
+}
+/* Betűk stílusa */
+.letter {
+    margin: 0 5px; /* 5px térköz balra-jobbra */
+    font-size: 24px; /* 24 képpontos betűméret */
+    display: inline-block; /* Blokk szintű megjelenés */
+    border-bottom: 2px solid #333; /* Aláhúzás */
+    padding-bottom: 5px; /* 5px térköz alul */
+    transition: all 0.3s ease; /* Sima átmenet animáció */
+}
+
+.letter.guessed {
+    color: rgb(112, 159, 195); /* Kék szín a kitalált betűknek */
+    border-bottom: 2px solid green; /* Zöld aláhúzás kitalált betűknél */
+}
+/* Billentyűzet */
+.keyboard {
+    margin: 20px; /* 20px külső térköz */
+    display: grid; /* Rácsos elrendezés */
+    grid-template-columns: repeat(7, 1fr); /* 7 oszlop */
+    gap: 10px; /* 10px térköz gombok között */
+}
+
+.keyboard button {
+    font-size: 18px; /* 18px-es betűméret */
+    padding: 10px 15px; /* Belső térköz */
+    background-color: #4c8eaf; /* Kék színű háttér */
+    color: white; /* Fehér betűszín */
+    border: none; /* Nincs keret */
+    border-radius: 5px; /* Kerekített sarkok */
+    cursor: pointer; /* Mutató kurzor */
+    transition: all 0.3s ease; /* Sima átmenet animáció */
+}
+
+.keyboard button:disabled {
+    background-color: #ccc; /* Szürke háttér letiltott gomboknál */
+    cursor: not-allowed; /* Tiltott kurzor */
+}
+
+.keyboard button:hover {
+    background-color: #95e1fd; /* Világoskék háttér hover állapotban */
+}
+
+/* Eredmény üzenet */
+.result-message {
+    font-size: 24px; /* 24px-es betűméret */
+    font-weight: bold; /* Félkövér betűk */
+    margin: 20px 0; /* 20px térköz felül-alul */
+    color: #000000; /* Fekete szöveg */
+}
+
+/* Új játék gomb */
+.new-game-button {
+    font-size: 18px; /* 18px-es betűméret */
+    padding: 10px 15px; /* Belső térköz */
+    background-color: #2196f3; /* Égszínkék háttér */
+    color: white; /* Fehér betűszín */
+    border: none; /* Nincs keret */
+    border-radius: 5px; /* Kerekített sarkok */
+    cursor: pointer; /* Mutató kurzor */
+    margin-top: 20px; /* 20px térköz felül */
+    transition: all 0.3s ease; /* Sima átmenet animáció */
+}
+
+.new-game-button:hover {
+    background-color: #0b7dda; /* Sötétebb kék hover állapotban */
+}
+
