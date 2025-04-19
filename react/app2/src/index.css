@@ -1,0 +1,10 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif; /* Alapértelmezett betűtípus beállítása*/
+ 
+}
+ 
+.brush-property-label {
+  color: black; /* Szöveg színe */
+  font-weight: normal; /* Normál vastagság (felülírja a félkövért) */
+  margin: 8px 0; /* Függőleges térköz */
+}

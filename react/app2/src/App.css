@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap'); /* Betűtípus importálása */
+
+ /* Fő alkalmazás container */
+ .App {
+    width: 100%; /* Teljes szélesség */
+    height: 100vh; /* Teljes képernyőmagasság */
+    display: flex; /* Flexbox elrendezés */
+    flex-direction: column; /* Elemei egymás alatt */
+    justify-content: flex-start; /* Elemei felülről kezdődnek */
+    align-items: center; /* Középre igazítás vízszintesen */
+   background-color: white; /* Fehér háttérszín */
+} 
+
+ /* H1 cím stílusa */
+ h1 {
+    font-family: 'Lobster', cursive; /* Lobster betűtípus */
+    font-size: 50px; /* Nagyon nagy betűméret */
+    color: #4644f0; /* Lila-kék színű betűk */
+}
+
+ /* Rajzoló terület */
+ .draw-area {
+    width: 1280px; /* Széles terület (HD felbontás) */
+    height: 720px; /* Magas terület (HD felbontás) */
+    border: 2px solid #808080; /* Szürke keret */
+    position: relative; /* Pozicionálás alapja */
+    background-color: white; /* Fehér háttér */
+}
+
+ /* Menü sáv */
+ .Menu {
+    width: 650px; /* Közepes szélesség */
+    height: 50px; /* Alacsony magasság */
+    display: flex; /* Flexbox elrendezés */
+    justify-content: space-evenly; /* Egyenletes elosztás */
+    border-radius: 5px; /* Enyhén lekerekített sarkok */
+    align-items: center; /* Középre igazítás függőlegesen */
+    background-color: #a3a3a32d; /* Félig átlátszó világosszürke */
+    margin: auto; /* Középre igazítás vízszintesen */
+    margin-top: 10px; /* 10px térköz felül */
+}
